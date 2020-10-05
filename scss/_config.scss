@@ -1,0 +1,22 @@
+// Variables
+$website-width: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+// for the bg-image, scss file will be compiled to css file,
+// so the url is not based on scss file path, but the path of the "css file",
+// As the browser only read the style file from css file, not based on scss file
+$bg-image: url('../img/showcase.jpg');
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+
+
