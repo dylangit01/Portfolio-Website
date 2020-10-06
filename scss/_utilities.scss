@@ -1,4 +1,4 @@
-@import "config";
+@import 'config';
 
 .container {
   max-width: $website-width;
@@ -62,6 +62,26 @@ input[class^='btn-']:hover {
   }
 }
 
+// Backgrounds
+.bg {
+  &-main {
+    background: $main-color;
+    color: set-text-color($main-color)
+  }
+  &-dark {
+    background: $dark-color;
+    color: set-text-color($dark-color)
+  }
+  &-medium {
+    background: $medium-color;
+    color: set-text-color($medium-color)
+  }
+  &-light {
+    background: $light-color;
+    color: set-text-color($light-color)
+  }
+}
+
 .lead {
   font-size: 1.3rem;
   margin-bottom: 2rem;
@@ -117,6 +137,5 @@ input[class^='btn-']:hover {
   width: 3rem;
   background: $main-color;
   display: block;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 1rem;
 }
-
