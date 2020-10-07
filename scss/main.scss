@@ -1,5 +1,6 @@
 @import 'config';
 @import "utilities";
+@import "item_grid";
 
 // General Styles
 * {
@@ -250,6 +251,7 @@ img {
     }
   }
 
+  // About C
   &-c {
     .about-logos {
       display: grid;
@@ -262,6 +264,7 @@ img {
     }
   }
 
+  // About D
   &-d {
     .testimonials {
       display: grid;
@@ -289,9 +292,55 @@ img {
       }
     }
   }
-
-
 }
+
+
+// Contact page
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas:
+      'name email'
+      'subject phone'
+      'message message';
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+
+      // Grid Areas:
+      .name-input { grid-area: name}
+      .email-input { grid-area: email}
+      .subject-input { grid-area: subject}
+      .phone-input { grid-area: phone}
+      .message-input { grid-area: message}
+
+      .text-input {
+        padding: .5rem 1rem;
+      }
+    }
+
+    button[type='submit'] {
+      width: 50%;
+    }
+  }
+
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  &-c {
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
+}
+
 
 
 // Footer
@@ -323,3 +372,8 @@ img {
   }
 }
 
+/* Have to import mobile scss at the bottom because if import at the top,
+the scss mobile codes will be compiled to css before the normal codes,
+meaning the mobile codes will be overwritten by the normal codes.
+ */
+@import "mobile";
